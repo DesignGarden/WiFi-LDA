@@ -1,0 +1,191 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Name": { "type": "string" },
+        "MetersToPixels": { "type": "number" },
+        "Network": { "type": "integer" },
+        "SchematicUrl": { "type": "string" },
+        "ImageOffset": {
+            "type": "object",
+            "properties": {
+                "x": { "type": "number" },
+                "y": { "type": "number" }
+            },
+            "required": ["x", "y"]
+        },
+        "onlyShowRefs": { "type": "boolean" },
+        "Saves": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sensors": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Ptx": { "type": "number" },
+                                "Gtx": { "type": "number" },
+                                "Grx": { "type": "number" },
+                                "Xa": { "type": "number" },
+                                "l": { "type": "number" },
+                                "mac": { "type": "string" },
+                                "access_points_id": { "type": "integer" },
+                                "x": { "type": "number" },
+                                "y": { "type": "number" }
+                            },
+                            "required": ["Ptx", "Gtx", "Grx", "Xa", "l", "mac", "access_points_id", "x", "y"]
+                        }
+                    },
+                    "zones": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "x": { "type": "number" },
+                                "y": { "type": "number" },
+                                "anchors": {
+                                    "type": "object",
+                                    "properties": {
+                                        "topLeft": {
+                                            "$ref": "#/definitions/position"
+                                        },
+                                        "topRight": {
+                                            "$ref": "#/definitions/position"
+                                        },
+                                        "bottomRight": {
+                                            "$ref": "#/definitions/position"
+                                        },
+                                        "bottomLeft": {
+                                            "$ref": "#/definitions/position"
+                                        }
+                                    },
+                                    "required": ["topLeft", "topRight", "bottomRight", "bottomLeft"]
+                                }
+                            },
+                            "required": ["x", "y", "anchors"]
+                        }
+                    }
+                },
+                "required": ["sensors", "zones"]
+            }
+        },
+        "IgnoreMacs": {
+            "type": "array",
+            "items": { "type": "string" }
+        },
+        "ReferenceMacs": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "Description": { "type": "string" },
+                    "Expected": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Start": { "type": ["string", "null"], "format": "date-time" },
+                                "End": { "type": ["string", "null"], "format": "date-time" },
+                                "Location": {
+                                    "$ref": "#/definitions/position"
+                                }
+                            },
+                            "required": ["Start", "End", "Location"]
+                        }
+                    }
+                },
+                "required": ["Expected"]
+            }
+        },
+        "GeoTransform": {
+            "type": "object",
+            "properties": {
+                "configured": {
+                    "type": "object",
+                    "properties": {
+                        "geo": {
+                            "$ref": "#/definitions/geo"
+                        }
+                    },
+                    "required": ["geo"]
+                },
+                "actual": {
+                    "type": "object",
+                    "properties": {
+                        "geo": {
+                            "$ref": "#/definitions/geo"
+                        },
+                        "pixels": {
+                            "$ref": "#/definitions/zonePixels"
+                        }
+                    },
+                    "required": ["geo", "pixels"]
+                }
+            },
+            "required": ["configured", "actual"]
+        },
+        "ROOMS": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/position"
+            }
+        }
+    },
+    "required": ["Name", "MetersToPixels", "Network", "SchematicUrl", "ImageOffset", "onlyShowRefs", "Saves", "IgnoreMacs", "ReferenceMacs", "GeoTransform", "ROOMS"],
+    "definitions": {
+        "position": {
+            "type": "object",
+            "properties": {
+                "x": { "type": "number" },
+                "y": { "type": "number" }
+            },
+            "required": ["x", "y"]
+        },
+        "geo": {
+            "type": "object",
+            "properties": {
+                "tl": {
+                    "$ref": "#/definitions/latlong"
+                },
+                "tr": {
+                    "$ref": "#/definitions/latlong"
+                },
+                "br": {
+                    "$ref": "#/definitions/latlong"
+                },
+                "bl": {
+                    "$ref": "#/definitions/latlong"
+                }
+            },
+            "required": ["tl", "tr", "br", "bl"]
+        },
+        "latlong": {
+            "type": "object",
+            "properties": {
+                "lng": { "type": "number" },
+                "lat": { "type": "number" }
+            },
+            "required": ["lng", "lat"]
+        },
+        "zonePixels": {
+            "type": "object",
+            "properties": {
+                "tl": {
+                    "$ref": "#/definitions/position"
+                },
+                "tr": {
+                    "$ref": "#/definitions/position"
+                },
+                "br": {
+                    "$ref": "#/definitions/position"
+                },
+                "bl": {
+                    "$ref": "#/definitions/position"
+                }
+            },
+            "required": ["tl", "tr", "br", "bl"]
+        }
+    }
+}

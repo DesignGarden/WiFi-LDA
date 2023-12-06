@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.context-menu {
+  padding: 5px;
+  display: none;
+  position: absolute;
+  /*width: 60px;*/
+  background-color: white;
+  box-shadow: 0 0 5px grey;
+  border-radius: 3px;
+}
+
+.context-menu button {
+  width: 100%;
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.context-menu button:hover {
+  background-color: lightgray;
+}
+
+#progressBarContainer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#resultsTable {
+  font-family: monospace;
+  font-size: 10px;
+  border-collapse: collapse;
+  line-height: 90%;
+}
+
+#resultsTable td:not(:first-child) {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#resultsTable td:first-child.line-through {
+  text-decoration: line-through;
+}

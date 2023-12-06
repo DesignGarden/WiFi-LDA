@@ -1,0 +1,21 @@
+{
+    "Name": "ExampleOffice",
+    "MetersToPixels": 10,
+    "Network": 1,
+    "onlyShowRefs": false,
+    "SchematicUrl": "/images/schematic.png",
+    "ImageOffset": {"x": 200, "y": 100},
+    "Saves": [],
+    "IgnoreMacs": [],
+    "ReferenceMacs": {
+        "00:11:22:33:44:55": {
+            "Expected": [
+                {
+                    "Start": null,
+                    "End": null,
+                    "Location": {"x":500,"y":500}
+                }
+            ]
+        }
+    }
+}

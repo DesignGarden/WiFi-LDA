@@ -1,0 +1,6 @@
+.well-known/
+cgi-bin/
+/nbproject/*
+.vscode/*
+robots.txt
+.htaccess
