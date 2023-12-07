@@ -5,6 +5,9 @@
 This project demonstrates a Wifi Location-Based Services (LBS) system, providing a platform to visualize and calculate wireless signal-based location tracking within a defined area (like an office). It utilizes various technologies including JavaScript, Konva.js for canvas-based rendering, and jQuery for DOM manipulations.
 
 Preview the project here: https://designgarden.github.io/WiFi-LDA/
+- Select the "ExampleOffice" from the dropdown at top (your page should refresh and show a blueprint in the main area).
+- Click "Load" (you should see 4 APs and 2 zone appear over the blueprint).
+- Click "Get Signals (5m)" (you should see 2 detected devices appear in the second zone).
 
 ### Front-End Only
 Note that this is only the front-end code for the WiFi LDA. You will have to craft an ingest and reporting API for your WiFi data, then edit the api.service.js accordingly.
