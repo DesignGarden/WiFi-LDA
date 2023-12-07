@@ -336,7 +336,7 @@ export default class Dashboard
     {
         this.scanTimes.push(time);
 
-        const USE_MERAKI_AS_GUESS = true;
+        const USE_MERAKI_AS_GUESS = false;
 
         await Person.GetPeople(this.sensors, this.people, time, this.guessLayers[0], this.peopleLayer, this.timelineLayer, this.zones, USE_MERAKI_AS_GUESS);
 

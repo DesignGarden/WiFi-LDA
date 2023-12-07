@@ -1,19 +1,133 @@
 {
     "Name": "ExampleOffice",
-    "MetersToPixels": 10,
+    "MetersToPixels": 15,
     "Network": 1,
     "onlyShowRefs": false,
-    "SchematicUrl": "/images/schematic.png",
-    "ImageOffset": {"x": 200, "y": 100},
-    "Saves": [],
+    "SchematicUrl": "images/schematic.png",
+    "ImageOffset": {
+        "x": 0,
+        "y": 100
+    },
+    "Saves": [
+        {
+            "sensors": [
+                {
+                    "Ptx": 20,
+                    "Gtx": 2.5,
+                    "Grx": 2.5,
+                    "Xa": -5,
+                    "l": 0.12,
+                    "mac": "11:22:33:44:AA:BB",
+                    "access_points_id": 1,
+                    "x": 268,
+                    "y": 583
+                },
+                {
+                    "Ptx": 20,
+                    "Gtx": 2.5,
+                    "Grx": 2.5,
+                    "Xa": -5,
+                    "l": 0.12,
+                    "mac": "11:22:33:44:BB:CC",
+                    "access_points_id": 2,
+                    "x": 646,
+                    "y": 427
+                },
+                {
+                    "Ptx": 20,
+                    "Gtx": 2.5,
+                    "Grx": 2.5,
+                    "Xa": -5,
+                    "l": 0.12,
+                    "mac": "11:22:33:44:CC:DD",
+                    "access_points_id": 3,
+                    "x": 975,
+                    "y": 582
+                },
+                {
+                    "Ptx": 20,
+                    "Gtx": 2.5,
+                    "Grx": 2.5,
+                    "Xa": -5,
+                    "l": 0.12,
+                    "mac": "11:22:33:44:DD:EE",
+                    "access_points_id": 4,
+                    "x": 650,
+                    "y": 668
+                }
+            ],
+            "zones": [
+                {
+                    "x": 199.5,
+                    "y": 392.5,
+                    "anchors": {
+                        "topLeft": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "topRight": {
+                            "x": 313,
+                            "y": 0
+                        },
+                        "bottomRight": {
+                            "x": 313,
+                            "y": 291
+                        },
+                        "bottomLeft": {
+                            "x": 0,
+                            "y": 291
+                        }
+                    }
+                },
+                {
+                    "x": 516.5,
+                    "y": 392.5,
+                    "anchors": {
+                        "topLeft": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "topRight": {
+                            "x": 522,
+                            "y": 0
+                        },
+                        "bottomRight": {
+                            "x": 522,
+                            "y": 291
+                        },
+                        "bottomLeft": {
+                            "x": 0,
+                            "y": 291
+                        }
+                    }
+                }
+            ],
+            "IgnoreMacs": []
+        }
+    ],
     "IgnoreMacs": [],
     "ReferenceMacs": {
-        "00:11:22:33:44:55": {
+        "34:56:fe:12:34:56": {
             "Expected": [
                 {
                     "Start": null,
                     "End": null,
-                    "Location": {"x":500,"y":500}
+                    "Location": {
+                        "x": 653,
+                        "y": 578
+                    }
+                }
+            ]
+        },
+        "43:56:fe:12:34:65": {
+            "Expected": [
+                {
+                    "Start": null,
+                    "End": null,
+                    "Location": {
+                        "x": 890,
+                        "y": 427
+                    }
                 }
             ]
         }

@@ -75,13 +75,12 @@ export default class DistanceCalculation
      */
     static AdjustOpacityByProximity(layer, sensors)
     {
-        return;
         /**
          * @description The ratio of the alpha value that should be affected. 
          * Higher values will give more weight to this adjustment.
          * @type {number}
          */
-        const influence = 0.20;
+        const influence = 0.10;
 
         const { width, height } = layer.getCanvas();
         const imgData = layer.getCanvas().getContext().getImageData(0, 0, width, height);
